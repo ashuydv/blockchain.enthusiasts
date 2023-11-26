@@ -1,14 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-* {
-  font-family: 'Inter', sans-serif;
+/* Initial styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #131313;
+  padding: 20px;
+  color: #fff;
+  z-index: 1000;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(0);
 }
 
-.learn-more .svg-arrow {
-  margin-left: 10px;
-  transition: all 0.3s ease;
-}
-
-.learn-more:hover .svg-arrow {
-  margin-left: 16px;
+/* Hidden state */
+header.hidden {
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
 }

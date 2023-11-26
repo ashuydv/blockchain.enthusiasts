@@ -3,7 +3,7 @@ import React from 'react';
 
 const Feature = ({ title, description, color, projectLink }) => (
     <div className="p-4 md:w-1/3">
-        <div className="flex rounded-lg h-full bg-[#242424] text-white relative overflow-hidden bg-opacity-60 p-8 flex-col">
+        <div className="flex rounded-lg h-full bg-[#242424] text-white relative overflow-hidden bg-opacity-60 p-8 transition-all hover:scale-105 flex-col">
             <div className="flex items-center mb-3">
                 <h2 className=" text-lg title-font font-medium">{title}</h2>
             </div>

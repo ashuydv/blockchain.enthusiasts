@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import Feature from '../components/Feature';
 import axios from 'axios';
 import Layout from '../components/layout';
-import Hero from '../components/Hero';
-import FeatureSection from '../components/FeatureSection';
 
-const Home = () => {
+const Resources = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -20,7 +19,7 @@ const Home = () => {
                 setLoading(false);
             });
     }, []);
- 
+
     if (loading) {
         return (
             <div className=' min-h-screen relative'>
@@ -38,26 +37,19 @@ const Home = () => {
 
     return (
         <Layout>
-            <Hero />
-            <section className='space-y-14 py-12'>
-                <FeatureSection
-                    title='resources'
-                    items={data.resources}
-                    color='bg-purple-500'
-                />
-                <FeatureSection
-                    title='projects'
-                    items={data.projects}
-                    color='bg-yellow-500'
-                />
-                <FeatureSection
-                    title='repos'
-                    items={data.repos}
-                    color='bg-green-500'
-                />
-            </section>
+            <div className="flex flex-wrap py-32 -m-4">
+                {data.resources && data.resources.map((item) => (
+                    <Feature
+                        key={item.id}
+                        title={item.fields.title}
+                        description={item.fields.description}
+                        color="bg-orange-400"
+                        projectLink={item.fields.link}
+                    />
+                ))}
+            </div>
         </Layout>
-    );
-};
+    )
+}
 
-export default Home;
+export default Resources
