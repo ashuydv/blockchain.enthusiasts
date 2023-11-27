@@ -1,7 +1,7 @@
 // Import necessary dependencies
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import FeatureSection from '../components/FeatureSection';
 import Head from 'next/head';
