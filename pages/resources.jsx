@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Feature from '../components/Feature';
 import axios from 'axios';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Head from 'next/head';
 
 const Resources = () => {
