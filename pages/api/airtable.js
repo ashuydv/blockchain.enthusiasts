@@ -1,6 +1,6 @@
 const { NextApiRequest, NextApiResponse } = require('next')
 const Airtable = require('airtable')
-
+ 
 // Initialize Airtable
 const base = new Airtable({
   apiKey: process.env.NEXT_API_KEY
