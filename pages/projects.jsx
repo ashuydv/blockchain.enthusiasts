@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Feature from '../components/Feature';
 import axios from 'axios';
 import Layout from '../components/layout';
+import Head from 'next/head';
 
 const projects = () => {
     const [data, setData] = useState([]);
@@ -37,6 +38,11 @@ const projects = () => {
 
     return (
         <Layout>
+            <Head>
+                <title>projects/blockchain.enthusiasts</title>
+                <meta property="og:title" content="blockchain.enthusiasts" key="title" />
+                <meta property="og:description" content="a curated platform, for all the blockchain based resources out there !!" key="description" />
+            </Head>
             <div className="flex flex-wrap pt-32 pb-24 -m-4">
                 {data.projects && data.projects.map((item) => (
                     <Feature

@@ -11,7 +11,7 @@ const FeatureSection = ({ title, items, color }) => (
             </div>
             <div>
                 <Link href={`/${title}`} className='text-base font-medium text-white'>
-                    View More
+                    view more
                 </Link>
             </div>
         </div>

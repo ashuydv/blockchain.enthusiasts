@@ -1,13 +1,16 @@
+// Import necessary dependencies
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Layout from '../components/layout';
 import Hero from '../components/Hero';
 import FeatureSection from '../components/FeatureSection';
+import Head from 'next/head';
 
 const Home = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [filteredData, setFilteredData] = useState([]); // State to hold filtered data based on search query
 
     useEffect(() => {
         axios.get('/api/airtable')
@@ -20,7 +23,7 @@ const Home = () => {
                 setLoading(false);
             });
     }, []);
- 
+
     if (loading) {
         return (
             <div className=' min-h-screen relative'>
@@ -38,21 +41,28 @@ const Home = () => {
 
     return (
         <Layout>
+            <Head>
+                <title>blockchain.enthusiasts</title>
+                <meta property="og:title" content="blockchain.enthusiasts" key="title" />
+                <meta property="og:description" content="a curated platform, for all the blockchain based resources out there !!" key="description" />
+            </Head>
             <Hero />
+            {/* Include the SearchBar component with the handleSearch function */}
             <section className='space-y-14 py-12'>
+                {/* Use filteredData instead of data */}
                 <FeatureSection
                     title='resources'
-                    items={data.resources}
+                    items={filteredData.length > 0 ? filteredData[0].items : data.resources}
                     color='bg-purple-500'
                 />
                 <FeatureSection
                     title='projects'
-                    items={data.projects}
+                    items={filteredData.length > 1 ? filteredData[1].items : data.projects}
                     color='bg-yellow-500'
                 />
                 <FeatureSection
                     title='repos'
-                    items={data.repos}
+                    items={filteredData.length > 2 ? filteredData[2].items : data.repos}
                     color='bg-green-500'
                 />
             </section>

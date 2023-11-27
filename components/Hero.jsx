@@ -32,14 +32,14 @@ const Hero = () => {
                         </div>
                         <div className="px-2 w-1/2">
                             <Link href='/repos'>
-                            <div className="flex flex-wrap w-full bg-[#242424] sm:py-24 py-16 sm:px-10 px-6 relative rounded-3xl overflow-hidden">
-                                <div className="text-center relative z-10 w-full">
-                                    <h2 className="text-2xl text-white font-medium title-font mb-2">Contribute to Open Source Repositories</h2>
-                                    <p class="leading-relaxed text-gray-200">Get involved in open-source projects with our curated list of blockchain repositories, perfect for contributors of all levels.</p>
+                                <div className="flex flex-wrap w-full bg-[#242424] sm:py-24 py-16 sm:px-10 px-6 relative rounded-3xl overflow-hidden">
+                                    <div className="text-center relative z-10 w-full">
+                                        <h2 className="text-2xl text-white font-medium title-font mb-2">Contribute to Open Source Repositories</h2>
+                                        <p class="leading-relaxed text-gray-200">Get involved in open-source projects with our curated list of blockchain repositories, perfect for contributors of all levels.</p>
+                                    </div>
+                                    <div className={`absolute -top-10 -left-10 rounded-full bg-orange-400 w-20 h-20`}></div>
+                                    <div className={`absolute -bottom-8 -right-8 rounded-full border-8 border-orange-400 w-20 h-20`}></div>
                                 </div>
-                                <div className={`absolute -top-10 -left-10 rounded-full bg-orange-400 w-20 h-20`}></div>
-                                <div className={`absolute -bottom-8 -right-8 rounded-full border-8 border-orange-400 w-20 h-20`}></div>
-                            </div>
                             </Link>
                         </div>
                     </div>
