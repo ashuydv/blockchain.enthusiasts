@@ -1,10 +1,9 @@
-const { NextApiRequest, NextApiResponse } = require('next')
 const Airtable = require('airtable')
 
 // Initialize Airtable
 const base = new Airtable({
   apiKey:
-    process.env.NEXT_API_KEY
+    'patqfww5zI0H2bnPD.3afd42d3fa81ffac11d5b4f85fa13a9df7162451344fc6152d9447c92e7b4217'
 }).base('appuFIB43SekNMwV3')
 
 export default async function handler(req, res) {
